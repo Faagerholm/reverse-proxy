@@ -27,3 +27,24 @@ You can also run this locally, either by running the main.go or by compiling the
 > go build -o reverse-proxy main.go
 > ./reverse-proxy
 ```
+
+## Docker
+This has been published as an docker image
+
+Use it with your compose file.
+
+```yml
+# docker-compose.yml
+version: "3.8"
+service:
+  # ...
+  proxy:
+    image: faagerholm/reverse-proxy-go
+    ports:
+      - 10000:10000 # modify this for your needs
+    environment:
+      - PROXY_URL=http:example.com
+      - VERBOSE_DEBUG=false
+    command: go run main.go
+```
+connect to your reverse proxy with `localhost:1000` <- modify this to match your environment
