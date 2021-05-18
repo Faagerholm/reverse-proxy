@@ -29,7 +29,9 @@ You can also run this locally, either by running the main.go or by compiling the
 ```
 
 ## Docker
-This has been published as an docker image
+This has been published as a docker image
+Run is as you would any docker image  
+*Requires some environment variable, see example yml*
 
 Use it with your compose file.
 
