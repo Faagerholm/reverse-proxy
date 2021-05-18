@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  proxy:
+    build: .
+    ports:
+      - 10000:10000
+    environment: 
+      - PROXY_URL=${PROXY_URL}
+      - VERBOSE_DEBUG=${VERBOSE_DEBUG}
+    command: go run main.go
