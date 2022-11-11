@@ -31,6 +31,13 @@ You can also run this locally, either by running the main.go or by compiling the
 ## Docker
 This has been published as a docker image
 Run is as you would any docker image  
+
+```bash
+> docker run -p 8080:8080 -e PORT=8080 -e PROXY_URL=http://localhost:3000 -d faagerholm/reverse-proxy
+```
+
+
+### Docker-compose
 *Requires some environment variable, see example yml*
 
 Use it with your compose file.
@@ -43,7 +50,7 @@ service:
   proxy:
     image: faagerholm/reverse-proxy-go
     ports:
-      - 10000:10000 # modify this for your needs
+      - 8080:10000 # modify this for your needs
     environment:
       - PROXY_URL=http:example.com
       - VERBOSE_DEBUG=false

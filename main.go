@@ -61,7 +61,7 @@ func handleRequests() {
 	}
 
 	http.Handle("/", &ProxyHandler{proxy})
-	log.Fatal(http.ListenAndServe(":10000", nil))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func main() {
